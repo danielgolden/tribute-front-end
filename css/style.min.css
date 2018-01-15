@@ -964,6 +964,7 @@ main {
   box-shadow: inset 0 0 0 1px #DBD9E1, 0 2px 0px 0 rgba(246, 245, 247, 0.7);
   border: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   line-height: 49px;
   cursor: pointer; }
   @media screen and (max-width: 724px) {
