@@ -2,103 +2,195 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Tribute Main Screen - Wireframe</title>
+		<title>Tribute - Giving History</title>
 		<link rel="stylesheet" href="css/style.min.css">
+		<link rel="stylesheet" href="https://use.typekit.net/mzp1ckq.css">
 	</head>
 	<body>
-		<header><span class="client-logo">Client Logo</span></header>
-		<main>
-			<h1>
-				<span class="constituent-name">Constituent Name's</span>
-				Giving History for
-				<div class="years">
-					<span>2015</span>
-					<span>2016</span>
-					<span>2017</span>
-					<span class="active">2018</span>	
-				</div>
-			</h1>
-			<div class="cta-container">
-				<a href="#" class="btn-download">Download Tax Receipt</a>
-				<a href="#" class="btn-alt-view">View on [Client Site]</a>
-			</div>
-			<p class="legal">
-				Morbi malesuada nulla nec purus convallis consequat. Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.
-			</p>
-
-			<div class="table">
-				<div class="table-header">
-					<span class="table-heading"></span>
-					<span class="table-heading"></span>
-					<span class="table-heading"></span>
-					<span class="table-heading"></span>
-				</div>
-				<div class="table-row">
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-				</div>
-				<div class="table-row">
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-				</div>
-				<div class="table-row">
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-				</div>
-				<div class="table-row">
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-				</div>
-				<div class="table-row">
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-				</div>
-				<div class="table-row">
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-				</div>
-				<div class="table-row">
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-				</div>
-				<div class="table-row">
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-				</div>
-				<div class="table-row">
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-				</div>
-				<div class="table-row">
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-					<span class="item"></span>
-				</div>
+		<header>
+			<div class="header-content">
+				<a href="#" class="client-logo">Client Logo</a>
 				<div class="pagination">
-					<a href="#" class="btn-prev"></a>
-					<p>1 of 3</p>
-					<a href="#" class="btn-next"></a>
+					<a href="#" class="btn btn-prev"></a>
+					<select name="years-pagination" id="giving-year" class="giving-year">
+						<option value="2018">2018</option>
+						<option value="2017">2017</option>
+						<option value="2016">2016</option>
+						<option value="2015">2015</option>
+						<option value="2014">2014</option>
+					</select>
+					<a href="#" class="btn btn-next"></a>
+				</div>
+				<span class="user-name">Jonathan McGibbons</span>
+				
+				<button class="menu-toggle">
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+			</div>
+		</header>
+
+		<div class="page-lead">
+			<div class="page-title-container">
+				<h2 class="page-title">Your Annual Giving History</h2>
+				<h4 class="page-subtitle">Calendar Year 2018</h4>
+			</div>
+
+			<div class="mobile-page-title-container">
+				<h4 class="page-subtitle">Jonathan McGibbons'</h4>
+				<h1 class="page-title">Giving History for 
+				<span class="active-year-container">
+					<span class="active-year">2018</span>
+					<ul class="years">
+						<li class="year active">2018</li>	
+						<li class="year">2017</li>
+						<li class="year">2016</li>
+						<li class="year">2015</li>
+						<li class="year">2014</li>
+					</ul>
+				</span>
+				</h1>
+			</div>
+
+			<div class="cta-container">
+				<a href="#" class="btn btn-primary">Download Tax Receipt</a>
+				<a href="#" class="alt-view-link">View on familypolicyalliance.org</a>
+			</div>
+		</div>
+		<main>
+			<div class="main-content">
+				<div class="col-primary">
+					<div class="table-wrapper">
+				        <table class="giving-history-table" border="0" cellpadding="0" cellspacing="0">
+				            <thead>
+					            <tr>
+					                <th data-th="amount">
+					                	<a class="sortable" href="#" title="Amount">Amount
+										    <span class="sorting-control">
+										        <span class="sorting-control-up"></span> <span class="sorting-control-down"></span>
+										    </span>
+										</a>
+									</th>
+
+					                <th>
+					                	<a class="sortable" href="#" title="donation ID">donation ID
+										    <span class="sorting-control">
+										        <span class="sorting-control-up"></span> <span class="sorting-control-down"></span>
+										    </span>
+										</a>
+									</th>
+					                <th>
+					                	<a class="sortable" href="#" title="Type">Type
+										    <span class="sorting-control">
+										        <span class="sorting-control-up"></span> <span class="sorting-control-down"></span>
+										    </span>
+										</a>
+									</th>
+					                <th>
+					                	<a class="sortable" href="#" title="Date">Date
+										    <span class="sorting-control">
+										        <span class="sorting-control-up"></span> <span class="sorting-control-down"></span>
+										    </span>
+										</a>
+									</th>
+					            </tr>
+				            </thead>
+				            <tbody>
+				                <tr>
+				                    <td data-th="amount">$35</td>
+				                    <td data-th="donation ID">wJgyDvYe9x</td>
+				                    <td data-th="type">Monthly Recurring</td>
+				                    <td data-th="date">12/9/18</td>
+				                </tr>
+				                <tr>
+				                    <td data-th="amount">$50</td>
+				                    <td data-th="donation ID">Wfj492dn42</td>
+				                    <td data-th="type">One-time</td>
+				                    <td data-th="date">11/2/18</td>
+				                </tr>
+				                <tr>
+				                    <td data-th="amount">$145</td>
+				                    <td data-th="donation ID">2351aWe234</td>
+				                    <td data-th="type">One-time</td>
+				                    <td data-th="date">10/25/18</td>
+				                </tr>
+				                <tr>
+				                    <td data-th="amount">$25</td>
+				                    <td data-th="donation ID">aSqB6do2kG</td>
+				                    <td data-th="type">One-time</td>
+				                    <td data-th="date">8/15/18</td>
+				                </tr>
+				                <tr>
+				                    <td data-th="amount">$85</td>
+				                    <td data-th="donation ID">0as8uPIohU</td>
+				                    <td data-th="type">Monthly Recurring</td>
+				                    <td data-th="date">6/11/18</td>
+				                </tr>
+				                <tr>
+				                    <td data-th="amount">$97</td>
+				                    <td data-th="donation ID">MKuW9Mp4KJ</td>
+				                    <td data-th="type">One-time</td>
+				                    <td data-th="date">5/15/18</td>
+				                </tr>
+				                <tr>
+				                    <td data-th="amount">$25</td>
+				                    <td data-th="donation ID">jzo1yfR7uN</td>
+				                    <td data-th="type">Monthly Recurring</td>
+				                    <td data-th="date">5/27/18</td>
+				                </tr>
+				                <tr>
+				                    <td data-th="amount">$35</td>
+				                    <td data-th="donation ID">5nClgoPd0j</td>
+				                    <td data-th="type">One-time</td>
+				                    <td data-th="date">3/24/18</td>
+				                </tr>
+				                <tr>
+				                    <td data-th="amount">$100</td>
+				                    <td data-th="donation ID">07WvWrskkK</td>
+				                    <td data-th="type">Monthly Recurring</td>
+				                    <td data-th="date">1/27/18</td>
+				                </tr>
+							</tbody>
+				        </table>
+
+				        <div class="pagination">
+				        	<a href="#" class="btn btn-prev"></a>
+				        	<p>1 of 3</p>
+				        	<a href="#" class="btn btn-next"></a>
+				        </div>
+				    </div>   
+				<hr>
+				</div>
+				
+
+				<div class="col-secondary">
+					<div class="totals-container">
+						<div class="totals-section totals-section-1">
+							<h5 class="value">$7,000</h5>
+							<span class="label">Recurring Gifts</span>
+						</div>
+						<div class="totals-section totals-section-2">
+							<h5 class="value">$3,050</h5>
+							<span class="label">One-time Gifts</span>
+						</div>
+						<div class="totals-section totals-section-3">
+							<h3 class="value">$10,050</h3>
+							<span class="label">Total Giving in 2018</span>
+						</div>
+					</div>
+
+					<a href="#" class="view-externally-link">View on familypolicyalliance.com</a>
+
+					<hr>
+
+					<h5>Thank you for your contributions</h5>
+					<p>Your gifts to Family Policy Alliance have advanced pro-family legislation, rallied like-minded Americans to the polls, and made your voice heard. Your donation has gone directly toward the frontline efforts of politics and policy.</p>
 				</div>
 			</div>
 		</main>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="../js/script.js"></script>
 	</body>
 </html>
