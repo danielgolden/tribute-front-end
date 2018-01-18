@@ -13,6 +13,8 @@ $brand-red: #993157;
 $brand-orange: #F36347;
 $brand-yellow: #F3BC47;
 
+$client-color: #004B78;
+
 body {
 	font-size: 16px;
 	line-height: 1.5em;
@@ -229,7 +231,7 @@ td {
 .client-logo {
 	display: block;
 	height: 53px;
-	width: 125px;
+	width: 130px;
 	position: relative;
 	text-indent: 100%;
 	white-space: nowrap;
@@ -838,10 +840,15 @@ main {
 }
 
 .btn {
+	cursor: pointer;
 	transition: all .15s ease;	
 	
 	&:hover {
 		transform: translateY(-1px);
+	}
+
+	&:active {
+		transform: translateY(1px);
 	}
 }
 
@@ -861,6 +868,11 @@ a.btn-primary {
 
 	&:hover {
 		box-shadow: 0 12px 11px 0 rgba(58, 160, 31, 0.18);
+	}
+
+	&:active {
+		box-shadow: 0 10px 8px 0 rgba(58, 160, 31, 0.18);
+		outline: none;
 	}
 }
 
@@ -953,3 +965,372 @@ a.view-externally-link {
 	}
 }
 
+// ==============================================================
+// Authentication Styling
+// ==============================================================
+
+body {
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0, .68);
+
+	@media screen and (max-width: 650px) {
+        background-image: url(../images/tax-bg.png);
+        background-size: cover;
+    }
+}
+
+.authentication-container {
+	display: grid;
+	height: 650px;
+	grid-template-columns: 1fr 1fr;
+	box-sizing: border-box;
+	width: 950px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	background-color: #fff;
+	box-shadow: 0 20px 44px -20px rgba(0,0,0, .95);
+	border-radius: 10px 3px 3px 10px;
+
+	@media screen and (max-width: 1000px) {
+        width: 95%;
+    }
+
+    @media screen and (max-width: 650px) {
+        grid-template-columns: 1fr;
+        height: auto;
+        border-radius: 3px;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 90%;
+    }
+}
+
+.authentication-explanation {
+	display: grid;
+	align-content: center;
+	padding: 0 50px;
+	background-image: url(../images/tax-bg.jpg);
+	background-size: cover;
+	border-radius: 3px 0 0 3px;
+
+	@media screen and (max-width: 900px) {
+        padding: 30px;
+    }
+
+    @media screen and (max-width: 650px) {
+        background-image: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0%;
+        right: 0%;
+    }
+}
+
+.authentication-explanation-heading {
+	color: #fff;
+	text-shadow: 0 1px 2px rgba(0,0,0, .125);
+	-webkit-font-smoothing: antialiased;
+	font-size: 1.975em;
+	line-height: 1.325em;
+	margin-bottom: .125em;
+	margin-top: 0;
+
+	@media screen and (max-width: 650px) {
+		position: absolute;
+		top: -17%;
+		text-align: center;
+	    font-size: 1.777em;
+	}
+
+	@media screen and (max-width: 480px) {
+		display: none;
+        font-family: 'proxima-nova-condensed';
+    }
+
+    @media screen and (max-width: 400px) {
+        font-size: 1.333em;
+        line-height: 1.275em;
+        top: -15%;
+    }
+}
+
+.authentication-explanation-description {
+	color: #fff;
+	font-size: 1.125em;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: 0 1px 2px rgba(0,0,0, .3);
+
+	@media screen and (max-width: 650px) {
+		position: absolute;
+		bottom: -25%;
+		text-align: center;
+		// line-height: 
+	    font-size: 1em;
+	}
+
+	@media screen and (max-width: 480px) {
+		display: none;
+        font-family: 'proxima-nova-condensed';
+    }
+
+    @media screen and (max-width: 400px) {
+        line-height: 21px;
+    }
+}
+
+.authentication-form-container {
+	padding: 50px;
+
+	@media screen and (max-width: 900px) {
+        padding: 50px 30px;
+    }
+
+    @media screen and (max-width: 650px) {
+        position: relative;
+        z-index: 1;
+    }
+
+    @media screen and (max-width: 400px) {
+        padding: 30px 20px;
+    }
+}
+
+.authentication-logo {
+	display: block;
+	max-width: 195px;
+	margin: 0 auto;
+
+	@media screen and (max-width: 400px) {
+        max-width: 100px;
+    }
+
+	img {
+		width: 100%;
+	}
+}
+
+.authentication-heading {
+	margin-bottom: 40px;
+	font-size: 1.5em;
+	text-align: center;
+	color: $client-color;
+
+	@media screen and (max-width: 400px) {
+		margin-top: 15px;
+		margin-bottom: 25px;
+        font-family: proxima-nova-condensed;
+    }
+
+    @media screen and (max-width: 350px) {
+    	font-size: 1.25em;   
+    }
+
+	em {
+		color: rgba($client-color, .43);
+	}
+}
+
+.field-group {
+	margin-bottom: 10px;
+
+	input {
+		padding: 0 15px;
+		box-sizing: border-box;
+		border-radius: 3px;
+		width: 100%;
+		height: 50px;
+		outline: none;
+		border: none;
+		color: $primary;
+		font-family: proxima-nova;
+		-webkit-appearance: none;
+		box-shadow: inset 0 0 0 1px $primary-shade-2;
+
+		&.disabled {
+			background-color: $primary-shade-4;
+			pointer-events: none;
+		}
+	}
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	font-family: proxima-nova;
+	color: $primary-shade-2;
+	font-style: italic;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	font-family: proxima-nova;
+	color: $primary-shade-2;
+	font-style: italic;
+}
+:-ms-input-placeholder { /* IE 10+ */
+	font-family: proxima-nova;
+	color: $primary-shade-2;
+	font-style: italic;
+}
+:-moz-placeholder { /* Firefox 18- */
+	font-family: proxima-nova;
+	color: $primary-shade-2;
+	font-style: italic;
+}
+
+label {
+	display: block;
+	margin-bottom: 11px;
+	font-size: .75em;
+	line-height: .7em;
+	color: $primary-shade-1;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+}
+
+.or-sep {
+	position: relative;
+	margin-bottom: 13px;
+	font-size: 1.125em;
+	letter-spacing: 1px;
+	color: $primary-shade-1;
+	font-style: italic;
+	text-align: center;
+
+	&:before {
+		content: "";
+		width: 45%;
+		height: 1px;
+		position: absolute;
+		top: 13px;
+		left: 0;
+		background-color: $primary-shade-3;
+	}
+
+	&:after {
+		content: "";
+		width: 45%;
+		height: 1px;
+		position: absolute;
+		top: 13px;
+		right: 0;
+		background-color: $primary-shade-3;
+	}
+}
+
+.authentication-continue {
+	display: inline-block;
+	width: 100%;
+	height: 45px;
+	margin-top: 13px;
+	padding: 0 15px;
+	background-color: $client-color;
+	border-radius: 30px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-decoration: none;
+	font-size: 14px;
+	font-family: proxima-nova;
+	color: #fff;
+	line-height: 45px;
+	box-shadow: 0 10px 10px 0 rgba($client-color, 0.2);
+	border: none;
+
+	&:hover {
+		box-shadow: 0 11px 11px 0 rgba($client-color, 0.2);
+	}
+
+	&:active {
+		box-shadow: 0 9px 8px 0 rgba($client-color, 0.2);
+		outline: none;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.authentication-form-step-2-container {
+	display: none;
+
+	@media screen and (max-width: 400px) {
+        text-align: center;
+    }
+
+	.alert {
+		margin-top: 20px;
+	}
+
+	.authentication-heading {
+		margin: 25px 0 20px;
+	}
+}
+
+.authentication-container.step-2-active {
+	.authentication-form-step-1-container {
+		display: none;
+	}
+
+	.authentication-form-step-2-container {
+		display: block;
+	}
+}
+
+.authentication-verification-code {
+	text-align: center;
+}
+
+.alert {
+	height: 45px;
+	line-height: 45px;
+	border: 1px solid #92D3A6;
+	border-radius: 3px;
+	text-align: center;
+	background-color: #F7FFF5;
+	color: #0A7C1F;
+	font-size: .875em;
+
+	@media screen and (max-width: 400px) {
+        font-family: proxima-nova-condensed;
+        line-height: 49px;
+    }
+
+	strong {
+		font-weight: 500;
+	}
+}
+
+.authentication-code-help {
+	margin-top: 30px;
+	margin-bottom: 10px;
+
+	@media screen and (max-width: 400px) {
+        font-family: proxima-nova-condensed;
+        text-align: center;
+    }
+}
+
+a.alt-authentication-mode { 
+	color: $client-color;
+	text-decoration: none;
+	border-bottom: 1px dotted rgba($client-color, .8);
+	text-align: center;
+
+	@media screen and (max-width: 400px) {
+        font-family: proxima-nova-condensed;
+    }
+}

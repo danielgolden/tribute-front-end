@@ -30,4 +30,34 @@ $(function() {
 			$(this).addClass('active');
 		}
 	});
+
+	$('.authentication-email').focus(function() {
+		$('.authentication-phone').addClass('disabled');
+		// $('.authentication-phone').prop('readonly',true);
+	});
+
+	$('.authentication-phone').focus(function() {
+		$('.authentication-email').addClass('disabled');
+		// $('.authentication-email').prop('readonly',true);
+	});
+
+	$('.authentication-email').blur(function() {
+		if($(this).val().length == 0) {
+			$('.authentication-phone').removeClass('disabled');
+			// $('.authentication-phone').prop('readonly', false);
+		}
+	});
+
+	$('.authentication-phone').blur(function() {
+		if($(this).val().length == 0) {
+			$('.authentication-email').removeClass('disabled');
+			// $('.authentication-email').prop('readonly', false);
+		}
+	});
+
+	$('.authentication-continue').click(function(e) {
+		$('.authentication-container').addClass('step-2-active');
+		e.preventDefault();
+	})
+
 });

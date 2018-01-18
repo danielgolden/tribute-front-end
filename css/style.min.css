@@ -569,7 +569,7 @@ td {
 .client-logo {
   display: block;
   height: 53px;
-  width: 125px;
+  width: 130px;
   position: relative;
   text-indent: 100%;
   white-space: nowrap;
@@ -1059,9 +1059,12 @@ main {
       border-bottom: 1px dotted #abadbb; } }
 
 .btn {
+  cursor: pointer;
   transition: all .15s ease; }
   .btn:hover {
     transform: translateY(-1px); }
+  .btn:active {
+    transform: translateY(1px); }
 
 a.btn-primary {
   display: inline-block;
@@ -1078,6 +1081,9 @@ a.btn-primary {
   box-shadow: 0 10px 10px 0 rgba(58, 160, 31, 0.2); }
   a.btn-primary:hover {
     box-shadow: 0 12px 11px 0 rgba(58, 160, 31, 0.18); }
+  a.btn-primary:active {
+    box-shadow: 0 10px 8px 0 rgba(58, 160, 31, 0.18);
+    outline: none; }
 
 .legal {
   grid-column: 2/3;
@@ -1148,3 +1154,303 @@ a.view-externally-link {
     position: relative;
     top: 1px;
     background-image: url(../images/icon-external-link.svg); }
+
+body {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.68); }
+  @media screen and (max-width: 650px) {
+    .overlay {
+      background-image: url(../images/tax-bg.png);
+      background-size: cover; } }
+
+.authentication-container {
+  display: grid;
+  height: 650px;
+  grid-template-columns: 1fr 1fr;
+  box-sizing: border-box;
+  width: 950px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0 20px 44px -20px rgba(0, 0, 0, 0.95);
+  border-radius: 10px 3px 3px 10px; }
+  @media screen and (max-width: 1000px) {
+    .authentication-container {
+      width: 95%; } }
+  @media screen and (max-width: 650px) {
+    .authentication-container {
+      grid-template-columns: 1fr;
+      height: auto;
+      border-radius: 3px; } }
+  @media screen and (max-width: 400px) {
+    .authentication-container {
+      width: 90%; } }
+
+.authentication-explanation {
+  display: grid;
+  align-content: center;
+  padding: 0 50px;
+  background-image: url(../images/tax-bg.jpg);
+  background-size: cover;
+  border-radius: 3px 0 0 3px; }
+  @media screen and (max-width: 900px) {
+    .authentication-explanation {
+      padding: 30px; } }
+  @media screen and (max-width: 650px) {
+    .authentication-explanation {
+      background-image: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0%;
+      right: 0%; } }
+
+.authentication-explanation-heading {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.125);
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.975em;
+  line-height: 1.325em;
+  margin-bottom: .125em;
+  margin-top: 0; }
+  @media screen and (max-width: 650px) {
+    .authentication-explanation-heading {
+      position: absolute;
+      top: -17%;
+      text-align: center;
+      font-size: 1.777em; } }
+  @media screen and (max-width: 480px) {
+    .authentication-explanation-heading {
+      display: none;
+      font-family: 'proxima-nova-condensed'; } }
+  @media screen and (max-width: 400px) {
+    .authentication-explanation-heading {
+      font-size: 1.333em;
+      line-height: 1.275em;
+      top: -15%; } }
+
+.authentication-explanation-description {
+  color: #fff;
+  font-size: 1.125em;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+  @media screen and (max-width: 650px) {
+    .authentication-explanation-description {
+      position: absolute;
+      bottom: -25%;
+      text-align: center;
+      font-size: 1em; } }
+  @media screen and (max-width: 480px) {
+    .authentication-explanation-description {
+      display: none;
+      font-family: 'proxima-nova-condensed'; } }
+  @media screen and (max-width: 400px) {
+    .authentication-explanation-description {
+      line-height: 21px; } }
+
+.authentication-form-container {
+  padding: 50px; }
+  @media screen and (max-width: 900px) {
+    .authentication-form-container {
+      padding: 50px 30px; } }
+  @media screen and (max-width: 650px) {
+    .authentication-form-container {
+      position: relative;
+      z-index: 1; } }
+  @media screen and (max-width: 400px) {
+    .authentication-form-container {
+      padding: 30px 20px; } }
+
+.authentication-logo {
+  display: block;
+  max-width: 195px;
+  margin: 0 auto; }
+  @media screen and (max-width: 400px) {
+    .authentication-logo {
+      max-width: 100px; } }
+  .authentication-logo img {
+    width: 100%; }
+
+.authentication-heading {
+  margin-bottom: 40px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #004B78; }
+  @media screen and (max-width: 400px) {
+    .authentication-heading {
+      margin-top: 15px;
+      margin-bottom: 25px;
+      font-family: proxima-nova-condensed; } }
+  @media screen and (max-width: 350px) {
+    .authentication-heading {
+      font-size: 1.25em; } }
+  .authentication-heading em {
+    color: rgba(0, 75, 120, 0.43); }
+
+.field-group {
+  margin-bottom: 10px; }
+  .field-group input {
+    padding: 0 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: none;
+    color: #454357;
+    font-family: proxima-nova;
+    -webkit-appearance: none;
+    box-shadow: inset 0 0 0 1px #DBD9E1; }
+    .field-group input.disabled {
+      background-color: #F6F5F7;
+      pointer-events: none; }
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-family: proxima-nova;
+  color: #DBD9E1;
+  font-style: italic; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: proxima-nova;
+  color: #DBD9E1;
+  font-style: italic; }
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  font-family: proxima-nova;
+  color: #DBD9E1;
+  font-style: italic; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: proxima-nova;
+  color: #DBD9E1;
+  font-style: italic; }
+
+label {
+  display: block;
+  margin-bottom: 11px;
+  font-size: .75em;
+  line-height: .7em;
+  color: #8F92A4;
+  letter-spacing: 1.5px;
+  text-transform: uppercase; }
+
+.or-sep {
+  position: relative;
+  margin-bottom: 13px;
+  font-size: 1.125em;
+  letter-spacing: 1px;
+  color: #8F92A4;
+  font-style: italic;
+  text-align: center; }
+  .or-sep:before {
+    content: "";
+    width: 45%;
+    height: 1px;
+    position: absolute;
+    top: 13px;
+    left: 0;
+    background-color: #EDECF1; }
+  .or-sep:after {
+    content: "";
+    width: 45%;
+    height: 1px;
+    position: absolute;
+    top: 13px;
+    right: 0;
+    background-color: #EDECF1; }
+
+.authentication-continue {
+  display: inline-block;
+  width: 100%;
+  height: 45px;
+  margin-top: 13px;
+  padding: 0 15px;
+  background-color: #004B78;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: proxima-nova;
+  color: #fff;
+  line-height: 45px;
+  box-shadow: 0 10px 10px 0 rgba(0, 75, 120, 0.2);
+  border: none; }
+  .authentication-continue:hover {
+    box-shadow: 0 11px 11px 0 rgba(0, 75, 120, 0.2); }
+  .authentication-continue:active {
+    box-shadow: 0 9px 8px 0 rgba(0, 75, 120, 0.2);
+    outline: none; }
+  .authentication-continue:focus {
+    outline: none; }
+
+.authentication-form-step-2-container {
+  display: none; }
+  @media screen and (max-width: 400px) {
+    .authentication-form-step-2-container {
+      text-align: center; } }
+  .authentication-form-step-2-container .alert {
+    margin-top: 20px; }
+  .authentication-form-step-2-container .authentication-heading {
+    margin: 25px 0 20px; }
+
+.authentication-container.step-2-active .authentication-form-step-1-container {
+  display: none; }
+
+.authentication-container.step-2-active .authentication-form-step-2-container {
+  display: block; }
+
+.authentication-verification-code {
+  text-align: center; }
+
+.alert {
+  height: 45px;
+  line-height: 45px;
+  border: 1px solid #92D3A6;
+  border-radius: 3px;
+  text-align: center;
+  background-color: #F7FFF5;
+  color: #0A7C1F;
+  font-size: .875em; }
+  @media screen and (max-width: 400px) {
+    .alert {
+      font-family: proxima-nova-condensed;
+      line-height: 49px; } }
+  .alert strong {
+    font-weight: 500; }
+
+.authentication-code-help {
+  margin-top: 30px;
+  margin-bottom: 10px; }
+  @media screen and (max-width: 400px) {
+    .authentication-code-help {
+      font-family: proxima-nova-condensed;
+      text-align: center; } }
+
+a.alt-authentication-mode {
+  color: #004B78;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(0, 75, 120, 0.8);
+  text-align: center; }
+  @media screen and (max-width: 400px) {
+    a.alt-authentication-mode {
+      font-family: proxima-nova-condensed; } }
