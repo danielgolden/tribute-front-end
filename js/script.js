@@ -55,9 +55,18 @@ $(function() {
 		}
 	});
 
-	$('.authentication-continue').click(function(e) {
-		$('.authentication-container').addClass('step-2-active');
+	$('.authentication-form-step-1 .authentication-continue').click(function(e) {
 		e.preventDefault();
+		$('.authentication-container').addClass('loading');
+		
+		setTimeout(function() {
+			$('.authentication-container').removeClass('loading');
+			$('.authentication-container').addClass('step-2-active');
+		}, 1500);
 	})
 
+	$('.authentication-form-step-2 .authentication-continue').click(function(e) {
+		e.preventDefault();
+		$('body').removeClass('authenticating');
+	})
 });

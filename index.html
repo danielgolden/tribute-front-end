@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="css/style.min.css">
 		<link rel="stylesheet" href="https://use.typekit.net/mzp1ckq.css">
 	</head>
-	<body>
+	<body class="authenticating">
 		<header>
 			<div class="header-content">
 				<a href="#" class="client-logo">Client Logo</a>
@@ -209,7 +209,14 @@
 						<label for="">Phone Number</label>
 						<input type="text" class="authentication-phone" id="authentication-phone" placeholder="(555) 555-5555">
 					</div>
-					<input type="submit" value="continue" class="btn  authentication-continue">
+					<div class="btn-submit-container">
+						<svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" xml:space="preserve">
+						                              <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" transform="rotate(338.329 25 25)">
+						                                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+						                            </path>
+						                        </svg>
+						<input type="submit" value="continue" class="btn  authentication-continue">
+					</div>
 				</form>
 			</div>
 

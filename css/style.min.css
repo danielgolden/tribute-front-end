@@ -1155,21 +1155,30 @@ a.view-externally-link {
     top: 1px;
     background-image: url(../images/icon-external-link.svg); }
 
-body {
+.authenticating {
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   top: 0;
   right: 0;
   left: 0; }
+  .authenticating .overlay {
+    opacity: 1;
+    pointer-events: auto; }
+  .authenticating .authentication-container {
+    opacity: 1;
+    pointer-events: auto; }
 
 .overlay {
-  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.68); }
+  background-color: rgba(0, 0, 0, 0.68);
+  transition: all .4s ease; }
   @media screen and (max-width: 650px) {
     .overlay {
       background-image: url(../images/tax-bg.png);
@@ -1177,18 +1186,21 @@ body {
 
 .authentication-container {
   display: grid;
+  opacity: 0;
+  pointer-events: none;
   height: 650px;
   grid-template-columns: 1fr 1fr;
   box-sizing: border-box;
   width: 950px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   background-color: #fff;
   box-shadow: 0 20px 44px -20px rgba(0, 0, 0, 0.95);
-  border-radius: 10px 3px 3px 10px; }
+  border-radius: 10px 3px 3px 10px;
+  transition: all .4s ease; }
   @media screen and (max-width: 1000px) {
     .authentication-container {
       width: 95%; } }
@@ -1378,6 +1390,26 @@ label {
     right: 0;
     background-color: #EDECF1; }
 
+.btn-submit-container {
+  position: relative; }
+
+.btn-submit-container svg {
+  opacity: 0;
+  width: 27px;
+  height: 27px;
+  margin-top: -9.5px;
+  margin-left: -13.5px;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  pointer-events: none; }
+  .loading .btn-submit-container svg {
+    opacity: 1; }
+
+.btn-submit-container svg path, .btn-submit-container svg rect {
+  fill: white; }
+
 .authentication-continue {
   display: inline-block;
   width: 100%;
@@ -1402,6 +1434,8 @@ label {
     outline: none; }
   .authentication-continue:focus {
     outline: none; }
+  .loading .authentication-continue {
+    color: transparent; }
 
 .authentication-form-step-2-container {
   display: none; }
@@ -1420,7 +1454,8 @@ label {
   display: block; }
 
 .authentication-verification-code {
-  text-align: center; }
+  text-align: center;
+  line-height: 30px; }
 
 .alert {
   height: 45px;
